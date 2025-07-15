@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Balıkesir Ulaşım Haritası</title>
+
+    <!-- Leaflet CSS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+
+    <!-- Proje stil dosyası -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="controls">
+      <label for="districtSelect">İlçe Seçiniz:</label>
+      <select id="districtSelect">
+        <option value="">İLÇE SEÇİNİZ</option>
+        <option value="merkez-karesi-ve-altieylul">
+          MERKEZ (KARESİ VE ALTIEYLÜL)
+        </option>
+        <option value="ilceler-arasi-ulasim">İLÇELER ARASI ULAŞIM</option>
+        <option value="ayvalik">AYVALIK</option>
+        <option value="balya">BALYA</option>
+        <option value="bandirma">BANDIRMA</option>
+        <option value="bigadic">BİGADİÇ</option>
+        <option value="burhaniye">BURHANİYE</option>
+        <option value="dursunbey">DURSUNBEY</option>
+        <option value="edremit">EDREMİT</option>
+        <option value="erdek">ERDEK</option>
+        <option value="gomec">GÖMEÇ</option>
+        <option value="gonen">GÖNEN</option>
+        <option value="havran">HAVRAN</option>
+        <option value="ivrindi">İVRİNDİ</option>
+        <option value="kepsut">KEPSUT</option>
+        <option value="manyas">MANYAS</option>
+        <option value="marmara">MARMARA</option>
+        <option value="savastepe">SAVAŞTEPE</option>
+        <option value="sindirgi">SINDIRGI</option>
+        <option value="susurluk">SUSURLUK</option>
+      </select>
+
+      <label for="lineSelect">Hat Seçiniz:</label>
+      <select id="lineSelect">
+        <option value="">Önce ilçe seçin</option>
+      </select>
+    </div>
+
+    <main class="main-container">
+      <section class="map-container">
+        <div id="map"></div>
+      </section>
+      <aside class="schedule-container" id="schedule">
+        <!-- JS will inject schedules here -->
+      </aside>
+    </main>
+
+    <!-- Leaflet JS -->
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+
+    <!-- Ana JavaScript dosyası -->
+    <script src="main.js"></script>
+  </body>
+</html>

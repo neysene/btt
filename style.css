@@ -1,0 +1,131 @@
+/* style.css */
+
+/* 1) Tüm sayfa tam yüksekliği kapsasın */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+/* 2) Body direk flex kolon, önce .controls, sonra main-container */
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+/* 3) Kontroller barı */
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: nowrap;
+  padding: 1rem;
+  flex: 0 0 auto;
+}
+
+.controls label {
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.controls select {
+  flex-shrink: 0;
+  min-width: 180px;
+  max-width: 400px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 0.3rem 0.4rem;
+  font-size: 1rem;
+}
+
+/* 4) Harita ve takvim bölümleri taşıyan konteyner */
+.main-container {
+  display: flex;
+  flex: 1 1 auto;
+  overflow: hidden;
+}
+
+/* 5) Harita konteyneri (solda %65 genişlik) */
+.map-container {
+  flex: 0 0 65%;
+  display: flex;
+}
+
+/* 6) Leaflet map div’i hem tam genişlik hem tam yükseklik */
+#map {
+  flex: 1 1 auto;
+}
+
+/* 7) Sefer çizelgesi bölümü (sağda kalan %35) */
+.schedule-container {
+  flex: 1 1 auto;
+  overflow-y: auto;
+  padding: 1rem;
+  background: #fafafa;
+  border-left: 1px solid #ddd;
+}
+
+/* 8) Sefer grupları */
+.schedule-group {
+  margin-bottom: 1.5rem;
+}
+
+.schedule-group h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.1rem;
+}
+
+/* 9) Saatler listesi */
+.schedule-times {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.schedule-times .time-item {
+  background: #eceff1;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.95rem;
+}
+
+/* 10) Açıklama metni */
+.schedule-desc {
+  font-size: 0.85rem;
+  color: #555;
+}
+
+/* 11) Kalkış yerleri */
+.departure-panel {
+  margin-bottom: 2rem;
+}
+.departure-panel h2 {
+  margin: 0 0 0.75rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+/* 12) tab stilleri */
+.tabs {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  box-shadow: inset 0 -1px 0 #ccc;
+  border-bottom: 1px solid #ccc;
+}
+.tabs.day-tabs {
+  margin-bottom: 1rem;
+}
+.tabs li {
+  padding: 0.5rem 1rem;
+  border-radius: 4px 4px 0 0;
+  cursor: pointer;
+}
+.tabs li.active {
+  background-color: #e3f2fd; /* açık mavi ton */
+  border-bottom: 3px solid #2196f3; /* alt çizgi zaten varsa üzerine koy */
+  font-weight: bold; /* kalın yazı */
+}
